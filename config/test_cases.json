@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_pedagogy_query",
+    "question": "Chào bạn, bạn có thể giải thích sự khác nhau cơ bản giữa Gerund (V-ing) và To-Infinitive (To-V) không?",
+    "expected_behavior": "Agent trả lời sư phạm tổng quan từ kiến thức chung mà không cần gọi Tool.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "pedagogical_error_correction_alignment",
+    "question": "i like did the thing sai ngữ pháp ở đâu",
+    "expected_behavior": "Agent thực thi ReAct Loop: Gọi get_student_context, đối chiếu giáo trình qua search_course_materials, ghi nhận lỗi sai qua log_student_mistake, và đưa ra câu trả lời dẫn chứng Slide 14 - Unit 3.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC03",
+    "type": "homework_progress_check",
+    "question": "Kiểm tra tình trạng làm bài tập về nhà Unit 3 của học viên SV2026_HUNG.",
+    "expected_behavior": "Agent tự động gọi Tool check_homework_status để lấy tiến độ BTVN và hạn nộp của học viên.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "mistake_history_tracking",
+    "question": "Xem lịch sử các lần mắc lỗi sai ngữ pháp của học viên SV2026_HUNG.",
+    "expected_behavior": "Agent gọi Tool get_student_mistake_history để kiểm tra tần suất học viên đã mắc các lỗi tương tự trong quá khứ.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC05",
+    "type": "dynamic_decision_escalation",
+    "question": "Em vẫn chưa hiểu rõ cách dùng like doing vs like to do, nhờ TA người thật hỗ trợ giải thích giúp em.",
+    "expected_behavior": "Agent thực hiện Dynamic Decision rẽ nhánh: Kích hoạt Tool escalate_to_human_ta hoặc book_ta_tutoring_session để ping Trợ giảng người thật.",
+    "complexity": "High"
+  }
+]

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinUni English Learning Assistant | Pedagogical ReAct Agent & MCP Server</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Light Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="light-theme">
+    <div class="app-container">
+        <!-- TOP HEADER BAR -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <div class="brand-title">
+                    <h1>VinUni English Learning Assistant</h1>
+                    <span class="subtitle">Pedagogical ReAct Agent: Course Alignment & Dynamic Decision</span>
+                </div>
+            </div>
+
+            <div class="header-status">
+                <div class="status-badge" id="badge-provider">
+                    <i class="fa-solid fa-microchip"></i>
+                    <span id="sys-provider">LLM: Loading...</span>
+                </div>
+                <div class="status-badge" id="badge-model">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span id="sys-model">Model: gemini-3.5-flash-lite</span>
+                </div>
+                <div class="status-badge green" id="badge-mcp">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <span id="sys-mcp">MCP Server: 10 Pedagogy Tools</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION TAB BAR -->
+        <nav class="app-nav">
+            <button class="nav-tab active" data-tab="tab-chat">
+                <i class="fa-solid fa-comments"></i> Trợ lý Sư phạm ReAct
+            </button>
+            <button class="nav-tab" data-tab="tab-compare">
+                <i class="fa-solid fa-scale-balanced"></i> So sánh Chatbot vs Pedagogical Agent
+            </button>
+            <button class="nav-tab" data-tab="tab-tools">
+                <i class="fa-solid fa-toolbox"></i> MCP Tools Inspector (10 Sư phạm Tools)
+            </button>
+        </nav>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="app-main">
+            
+            <!-- TAB 1: STREAMLINED CHAT & REACT WORKFLOW -->
+            <section class="tab-pane active" id="tab-chat">
+                <div class="chat-layout-single">
+                    
+                    <!-- TOP QUICK ACTION BAR -->
+                    <div class="quick-action-bar">
+                        <span class="action-title"><i class="fa-solid fa-bolt"></i> Thao tác nhanh:</span>
+                        <div class="chip-group">
+                            <span class="chip" onclick="quickFill('i like did the thing sai ngữ pháp ở đâu')">🎯 Sửa lỗi câu 'i like did the thing'</span>
+                            <span class="chip" onclick="quickFill('Em vẫn chưa hiểu rõ cách dùng like doing vs like to do, nhờ TA người thật hỗ trợ giải thích giúp em')">🚨 Ping Trợ giảng (TA)</span>
+                            <span class="chip" onclick="quickFill('Kiểm tra tình trạng làm bài tập về nhà Unit 3 của học viên SV2026_HUNG')">📝 Kiểm tra BTVN Unit 3</span>
+                            <span class="chip" onclick="quickFill('Xem lịch sử các lần mắc lỗi sai ngữ pháp của học viên SV2026_HUNG')">📜 Lịch sử mắc lỗi</span>
+                            <span class="chip" onclick="quickFill('Tra cứu slide giáo trình Unit 3 về quy tắc Verb Patterns')">📖 Tra cứu Slide giáo trình</span>
+                            <span class="chip" onclick="quickFill('Cho em bài tập củng cố về cấu trúc verb pattern Unit 3')">✍️ Bài tập củng cố tức thì</span>
+                            <span class="chip" onclick="quickFill('Đặt lịch học phụ đạo 1-1 với Ms. Lan Anh vào lúc 19:00 Thứ 6 ngày 18/09/2026 về Verb Patterns')">📅 Đặt lịch kèm 1-1 với TA</span>
+                        </div>
+                    </div>
+
+                    <!-- CENTER CHAT CONTAINER -->
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="welcome-card">
+                                <div class="welcome-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                <h2>Xin chào! Tôi là Trợ lý Học vụ & Sư phạm Tiếng Anh VinUni</h2>
+                                <p>Hệ thống vận hành theo quy trình sư phạm lớp học thực tế: <strong>Đối chiếu giáo trình lớp học</strong> (Unit & Slide bài giảng), <strong>Theo dõi tiến độ & Lịch sử lỗi sai</strong>, và <strong>Rẽ nhánh hành động động</strong> (Kích hoạt hỗ trợ TA người thật khi cần thiết).</p>
+                                <div class="welcome-actions">
+                                    <button class="btn btn-outline" onclick="quickFill('i like did the thing sai ngữ pháp ở đâu')">
+                                        <i class="fa-solid fa-spell-check"></i> 'i like did the thing' sai ở đâu?
+                                    </button>
+                                    <button class="btn btn-outline" onclick="quickFill('Kiểm tra tình trạng làm bài tập về nhà Unit 3 của học viên SV2026_HUNG')">
+                                        <i class="fa-solid fa-list-check"></i> BTVN SV2026_HUNG
+                                    </button>
+                                    <button class="btn btn-outline" onclick="quickFill('Em vẫn chưa hiểu rõ cách dùng like doing vs like to do, nhờ TA người thật hỗ trợ giải thích giúp em')">
+                                        <i class="fa-solid fa-headset"></i> Kết nối TA người thật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- INPUT FORM -->
+                        <div class="chat-input-wrapper">
+                            <form id="chat-form" onsubmit="handleChatSubmit(event)">
+                                <div class="input-container">
+                                    <textarea id="chat-input" placeholder="Nhập câu tiếng Anh cần chữa, thắc mắc ngữ pháp, hỏi bài tập về nhà hoặc yêu cầu hỗ trợ từ TA..." rows="1" onkeydown="handleKeyDown(event)"></textarea>
+                                    <button type="submit" class="btn btn-primary" id="btn-send">
+                                        <i class="fa-solid fa-paper-plane"></i> Gửi
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- TAB 2: SIDE-BY-SIDE COMPARISON -->
+            <section class="tab-pane" id="tab-compare">
+                <div class="compare-container">
+                    <div class="compare-header">
+                        <h2><i class="fa-solid fa-scale-balanced"></i> So sánh Chatbot Baseline (Cấp 2) vs Pedagogical ReAct Agent (Cấp 3)</h2>
+                        <p>Kiểm chứng sự khác biệt: Chatbot chỉ giải thích chung chung; trong khi Pedagogical ReAct Agent đối chiếu giáo trình Unit, dẫn chứng số Slide, ghi nhận lỗi học viên và hỗ trợ rẽ nhánh kết nối TA.</p>
+                        
+                        <div class="compare-input-box">
+                            <input type="text" id="compare-input" placeholder="Nhập câu hỏi để so sánh..." value="i like did the thing sai ngữ pháp ở đâu">
+                            <button class="btn btn-primary" onclick="runComparison()">
+                                <i class="fa-solid fa-play"></i> Chạy so sánh
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="compare-grid">
+                        <!-- LEFT PANEL: CHATBOT BASELINE -->
+                        <div class="compare-card baseline">
+                            <div class="card-title">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <div>
+                                    <h3>Chatbot Baseline (Cấp 2)</h3>
+                                    <span class="tag tag-warning">Không có Tool Call</span>
+                                </div>
+                                <span class="latency" id="baseline-latency">0 ms</span>
+                            </div>
+                            <div class="card-body" id="baseline-output">
+                                <p class="placeholder-text">Bấm "Chạy so sánh" để gửi câu hỏi đến Chatbot Baseline...</p>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT PANEL: REACT AGENT -->
+                        <div class="compare-card agent">
+                            <div class="card-title">
+                                <i class="fa-solid fa-brain"></i>
+                                <div>
+                                    <h3>ReAct Agent + MCP Server (Cấp 3)</h3>
+                                    <span class="tag tag-success">Native Tool Calling & MCP Server</span>
+                                </div>
+                                <span class="latency" id="agent-latency">0 ms</span>
+                            </div>
+                            <div class="card-body" id="agent-output">
+                                <p class="placeholder-text">Bấm "Chạy so sánh" để gửi câu hỏi đến ReAct Agent...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: MCP TOOLS INSPECTOR -->
+            <section class="tab-pane" id="tab-tools">
+                <div class="tools-container">
+                    <div class="tools-header">
+                        <h2><i class="fa-solid fa-network-wired"></i> Model Context Protocol (MCP) Server Tools</h2>
+                        <p>Danh sách 10 công cụ nâng cao chuẩn JSON Schema được đăng ký trên MCP Server của VinUni.</p>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-toolbox"></i> Danh sách 10 MCP Tools Active</h3>
+                        </div>
+                        <div class="panel-body" id="tools-schema-list">
+                            <!-- Loaded dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

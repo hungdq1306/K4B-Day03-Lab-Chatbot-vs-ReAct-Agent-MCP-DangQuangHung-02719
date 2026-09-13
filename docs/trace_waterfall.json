@@ -1,29 +1,145 @@
 [
   {
     "step": 1,
-    "query": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
+    "query": "Chào bạn, bạn có thể giải thích sự khác nhau cơ bản giữa Gerund (V-ing) và To-Infinitive (To-V) không?",
     "action_type": "FINAL_ANSWER",
-    "thought": "Câu hỏi chung về quy chế học vụ, trả lời trực tiếp không cần gọi Tool.",
-    "output": "[Mock Agent Response]: Xin chào! Quy chế học vụ VinUni yêu cầu sinh viên tích lũy tối thiểu 120 tín chỉ và duy trì GPA trên 2.0 để tốt nghiệp.",
-    "latency_ms": 2845.93
+    "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Chào bạn! Để giải thích sự khác nhau cơ bản giữa **Gerund (V-ing)** và **To-Infinitive (To-V)** trong tiếng Anh, chúng ta cùng nhìn nhận chúng dưới góc độ **bản chất ngữ nghĩa** và **vị trí xuất hiện** trong câu nhé:\n\n---\n\n### 1. Bản chất cốt lõi\n\n*   **Gerund (V-ing - Danh động từ):** \n    *   Mang bản chất là một **danh từ** có hình thức động từ.\n    *   Thường dùng để chỉ một **sự việc, hoạt động mang tính tổng quát, một trải nghiệm thực tế, một thói quen** hoặc hành động đã/đang diễn ra, mang cảm giác quen thuộc, tự nhiên.\n    *   *Ví dụ:* **Swimming** is my favorite hobby. (Việc bơi lội nói chung).\n\n*   **To-Infinitive (To-V - Động từ nguyên mẫu có To):**\n    *   Thường dùng để chỉ **mục đích, một hướng đi trong tương lai, một sự việc chưa xảy ra, hoặc một quyết định/lựa chọn cụ thể**.\n    *   Mang tính chất hướng về phía trước (forward-looking) hoặc mang tính ngoại lệ/cụ thể trong một tình huống nhất định.\n    *   *Ví dụ:* I want **to swim** this afternoon. (Ý định cụ thể chiều nay).\n\n---\n\n### 2. Các trường hợp sử dụng phổ biến\n\n#### A. Sau các động từ chính (Verb Patterns)\n*   **Các động từ đi với Gerund (V-ing):** Thường diễn tả sở thích, cảm xúc, sự tận hưởng hoặc sự kết thúc/hoãn lại một việc.\n    *   *Ví dụ:* enjoy, love, like, hate, mind, finish, avoid, practice...\n    *   *Cấu trúc:* I **enjoy reading** books. (Thích việc đọc sách nói chung).\n*   **Các động từ đi với To-Infinitive (To-V):** Thường diễn tả dự định, mong muốn, kế hoạch hoặc sự hứa hẹn trong tương lai.\n    *   *Ví dụ:* want, hope, plan, decide, expect, promise, would like...\n    *   *Cấu trúc:* I **want to learn** English. (Mong muốn cụ thể).\n\n#### B. Động từ đổi nghĩa khi đi với cả hai (Stop, Remember, Forget, Try...)\nMột số động từ có thể đi với cả V-ing và To-V nhưng nghĩa sẽ thay đổi hoàn toàn:\n*   **Stop + V-ing:** Ngừng hẳn việc đang làm. (*Stop smoking*: Bỏ hút thuốc).\n*   **Stop + To-V:** Dừng lại để làm một việc khác. (*Stop to smoke*: Dừng chân để hút thuốc).\n*   **Remember + V-ing:** Nhớ lại chuyện đã xảy ra trong quá khứ.\n*   **Remember + To-V:** Nhớ phải làm gì (trong tương lai/nhiệm vụ).\n\n---\n\n### Bạn có muốn luyện tập ngay không?\nĐể củng cố phần kiến thức này, mình có thể gửi ngay 2-3 câu **bài tập trắc nghiệm nhanh** kèm lời giải chi tiết, hoặc nếu bạn đang học một Unit cụ thể nào đó (ví dụ Unit trong giáo trình IELTS Foundation), hãy cho mình biết mã học viên (nếu có) để mình hỗ trợ sát với chương trình lớp học của bạn nhé! Bạn thấy thế nào?",
+    "latency_ms": 5653.77
   },
   {
     "step": 1,
-    "query": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "query": "i like did the thing sai ngữ pháp ở đâu",
     "action_type": "TOOL_EXECUTION",
-    "tool_name": "academic_query",
+    "tool_name": "search_course_materials",
     "arguments": {
-      "student_id": "SV2026001"
+      "query": "verb pattern like enjoy fancy",
+      "unit": 3
     },
-    "observation": {},
-    "latency_ms": 799.12
+    "observation": {
+      "status": "SUCCESS",
+      "unit": 3,
+      "topic": "Hobbies & Verb Patterns",
+      "slide": 14,
+      "slide_title": "Verb Patterns with Verbs of Liking / Disliking",
+      "rule": "Quy tắc trọng tâm: Sau các động từ chỉ cảm xúc, sở thích (like, enjoy, fancy, love, hate, adore, dislike), động từ theo sau bắt buộc chia ở dạng Danh động từ (V-ing) để chỉ sở thích hoặc thói quen chung: S + like/enjoy + V-ing. Riêng 'like' có thể đi với To-V (S + like + to-V) để diễn tả việc mình thấy tốt/nên làm (preference/good habit). Tuyệt đối KHÔNG kết hợp 'like' với động từ ở thì Quá khứ đơn (V2/V-ed như 'did', 'went', 'saw').",
+      "examples": [
+        "Đúng: 'I like doing exercise every morning.' (Thói quen/Sở thích)",
+        "Đúng: 'I like to do the laundry on Sundays.' (Lựa chọn tốt)",
+        "SAI: 'I like did the thing' (Lỗi ngữ pháp nghiêm trọng do dùng V2 'did' sau 'like')"
+      ],
+      "rubric_note": "Lỗi cấm kỵ trong tiêu chí Grammatical Range & Accuracy (GRA) IELTS Band 5.0 - 6.0.",
+      "message": "📖 [GIẢI ĐÁP NGỮ PHÁP & TRÍCH DẪN GIÁO TRÌNH]\n📌 Tài liệu tham khảo: Slide 14 - Unit 3 (Verb Patterns with Verbs of Liking / Disliking)\n💡 Quy tắc trọng tâm: Quy tắc trọng tâm: Sau các động từ chỉ cảm xúc, sở thích (like, enjoy, fancy, love, hate, adore, dislike), động từ theo sau bắt buộc chia ở dạng Danh động từ (V-ing) để chỉ sở thích hoặc thói quen chung: S + like/enjoy + V-ing. Riêng 'like' có thể đi với To-V (S + like + to-V) để diễn tả việc mình thấy tốt/nên làm (preference/good habit). Tuyệt đối KHÔNG kết hợp 'like' với động từ ở thì Quá khứ đơn (V2/V-ed như 'did', 'went', 'saw').\n✏️ Câu sửa chuẩn & Ví dụ đối chiếu:\n  • Đúng: 'I like doing exercise every morning.' (Thói quen/Sở thích)\n  • Đúng: 'I like to do the laundry on Sundays.' (Lựa chọn tốt)\n  • SAI: 'I like did the thing' (Lỗi ngữ pháp nghiêm trọng do dùng V2 'did' sau 'like')\n⚠️ Lưu ý tiêu chí IELTS: Lỗi cấm kỵ trong tiêu chí Grammatical Range & Accuracy (GRA) IELTS Band 5.0 - 6.0."
+    },
+    "latency_ms": 1786.89
   },
   {
     "step": 2,
-    "query": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "query": "i like did the thing sai ngữ pháp ở đâu",
     "action_type": "FINAL_ANSWER",
     "thought": "Tổng hợp kết quả từ MCP Server thành công.",
-    "output": "Chưa thể trả lời chi tiết do chưa nhận được dữ liệu từ MCP Server (hãy hoàn thành TODO 2.1).",
+    "output": "📖 [GIẢI ĐÁP NGỮ PHÁP & TRÍCH DẪN GIÁO TRÌNH]\n📌 Tài liệu tham khảo: Slide 14 - Unit 3 (Verb Patterns with Verbs of Liking / Disliking)\n💡 Quy tắc trọng tâm: Quy tắc trọng tâm: Sau các động từ chỉ cảm xúc, sở thích (like, enjoy, fancy, love, hate, adore, dislike), động từ theo sau bắt buộc chia ở dạng Danh động từ (V-ing) để chỉ sở thích hoặc thói quen chung: S + like/enjoy + V-ing. Riêng 'like' có thể đi với To-V (S + like + to-V) để diễn tả việc mình thấy tốt/nên làm (preference/good habit). Tuyệt đối KHÔNG kết hợp 'like' với động từ ở thì Quá khứ đơn (V2/V-ed như 'did', 'went', 'saw').\n✏️ Câu sửa chuẩn & Ví dụ đối chiếu:\n  • Đúng: 'I like doing exercise every morning.' (Thói quen/Sở thích)\n  • Đúng: 'I like to do the laundry on Sundays.' (Lựa chọn tốt)\n  • SAI: 'I like did the thing' (Lỗi ngữ pháp nghiêm trọng do dùng V2 'did' sau 'like')\n⚠️ Lưu ý tiêu chí IELTS: Lỗi cấm kỵ trong tiêu chí Grammatical Range & Accuracy (GRA) IELTS Band 5.0 - 6.0.",
+    "latency_ms": 10.0
+  },
+  {
+    "step": 1,
+    "query": "Kiểm tra tình trạng làm bài tập về nhà Unit 3 của học viên SV2026_HUNG.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "check_homework_status",
+    "arguments": {
+      "unit": 3,
+      "student_id": "SV2026_HUNG"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "student_id": "SV2026_HUNG",
+      "data": {
+        "unit": 3,
+        "title": "BTVN Unit 3: Verb Patterns & Daily Activities",
+        "status": "Đang làm dở (Pending - Đã nộp 2/5 bài tập)",
+        "deadline": "23:59 Chủ Nhật tuần này"
+      },
+      "message": "Tình trạng BTVN của học viên Đặng Quang Hùng (SV2026_HUNG): Bài tập: BTVN Unit 3: Verb Patterns & Daily Activities - Trạng thái: Đang làm dở (Pending - Đã nộp 2/5 bài tập) - Hạn nộp: 23:59 Chủ Nhật tuần này."
+    },
+    "latency_ms": 1672.63
+  },
+  {
+    "step": 2,
+    "query": "Kiểm tra tình trạng làm bài tập về nhà Unit 3 của học viên SV2026_HUNG.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
+    "output": "Tình trạng BTVN của học viên Đặng Quang Hùng (SV2026_HUNG): Bài tập: BTVN Unit 3: Verb Patterns & Daily Activities - Trạng thái: Đang làm dở (Pending - Đã nộp 2/5 bài tập) - Hạn nộp: 23:59 Chủ Nhật tuần này.",
+    "latency_ms": 10.0
+  },
+  {
+    "step": 1,
+    "query": "Xem lịch sử các lần mắc lỗi sai ngữ pháp của học viên SV2026_HUNG.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "get_student_mistake_history",
+    "arguments": {
+      "student_id": "SV2026_HUNG",
+      "grammar_topic": "ALL"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "student_id": "SV2026_HUNG",
+      "history": [
+        {
+          "date": "10/09/2026",
+          "unit": 2,
+          "error_type": "Verb Pattern",
+          "details": "Dùng 'enjoy went' thay vì 'enjoy going'",
+          "count": 1
+        },
+        {
+          "date": "12/09/2026",
+          "unit": 3,
+          "error_type": "Verb Pattern",
+          "details": "Dùng 'love played' thay vì 'love playing'",
+          "count": 2
+        }
+      ],
+      "count": 2,
+      "message": "Lịch sử lỗi sai của học viên Đặng Quang Hùng (2 lần ghi nhận): \n- 10/09/2026 (Unit 2): Verb Pattern - Dùng 'enjoy went' thay vì 'enjoy going'\n- 12/09/2026 (Unit 3): Verb Pattern - Dùng 'love played' thay vì 'love playing'"
+    },
+    "latency_ms": 1897.0
+  },
+  {
+    "step": 2,
+    "query": "Xem lịch sử các lần mắc lỗi sai ngữ pháp của học viên SV2026_HUNG.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
+    "output": "Lịch sử lỗi sai của học viên Đặng Quang Hùng (2 lần ghi nhận): \n- 10/09/2026 (Unit 2): Verb Pattern - Dùng 'enjoy went' thay vì 'enjoy going'\n- 12/09/2026 (Unit 3): Verb Pattern - Dùng 'love played' thay vì 'love playing'",
+    "latency_ms": 10.0
+  },
+  {
+    "step": 1,
+    "query": "Em vẫn chưa hiểu rõ cách dùng like doing vs like to do, nhờ TA người thật hỗ trợ giải thích giúp em.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "get_student_context",
+    "arguments": {
+      "student_id": "SV2026_HUNG"
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "student_id": "SV2026_HUNG",
+      "full_name": "Đặng Quang Hùng",
+      "current_course": "IELTS Foundation",
+      "current_unit": 3,
+      "unit_title": "Unit 3: Hobbies & Verb Patterns (Gerund vs Infinitive)",
+      "target_band": "6.5 IELTS",
+      "ta_assigned": "Ms. Lan Anh (IELTS 8.0)",
+      "ta_email": "lananh.ta@vinuni.edu.vn",
+      "message": "Học viên: Đặng Quang Hùng (SV2026_HUNG) - Lớp: IELTS Foundation - Đang học: Unit 3 (Unit 3: Hobbies & Verb Patterns (Gerund vs Infinitive)). Mục tiêu: 6.5 IELTS, TA phụ trách: Ms. Lan Anh (IELTS 8.0)."
+    },
+    "latency_ms": 1782.32
+  },
+  {
+    "step": 2,
+    "query": "Em vẫn chưa hiểu rõ cách dùng like doing vs like to do, nhờ TA người thật hỗ trợ giải thích giúp em.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
+    "output": "Học viên: Đặng Quang Hùng (SV2026_HUNG) - Lớp: IELTS Foundation - Đang học: Unit 3 (Unit 3: Hobbies & Verb Patterns (Gerund vs Infinitive)). Mục tiêu: 6.5 IELTS, TA phụ trách: Ms. Lan Anh (IELTS 8.0).",
     "latency_ms": 10.0
   }
 ]

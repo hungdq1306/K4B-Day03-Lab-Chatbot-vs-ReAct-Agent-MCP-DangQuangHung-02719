@@ -36,10 +36,15 @@ cp .env.example .env
 cp config/test_cases.example.json config/test_cases.json
 ```
 
-### Bước 3: Chạy thử Baseline kiểm tra môi trường
+### Bước 3: Chạy thử Baseline hoặc Giao diện Web UI Demo Modern
 ```bash
+# 1. Chạy nghiệm thu 5 Test Cases trên Terminal:
 python src/app.py --all
+
+# 2. Khởi chạy Giao diện Web UI Demo trực quan (Dark Glassmorphism Portal):
+python src/web_app.py
 ```
+👉 Sau đó truy cập trình duyệt tại: **`http://127.0.0.1:5000`** để trải nghiệm chat trực tiếp, so sánh Chatbot vs ReAct Agent, kiểm tra MCP Tools và xem Waterfall Trace Logs.
 
 **Kỳ vọng Output màn hình:**
 ```text
